@@ -1349,8 +1349,8 @@ footer {
 .iconScroll i{
     padding: 10px;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1438,7 +1438,7 @@ div:where(.swal2-icon) {
     /* padding: 100px  !important; */
 }
 .details .cart .imgs img{
-    width: 120px;
+    width: 25%;
     cursor: pointer;
 }
 .details .cart h6{
@@ -1463,3 +1463,30 @@ div:where(.swal2-icon) {
 .details .row{
     height: 100vh;
 } 
+
+@media (max-width: 992px) {
+    .details .cart{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .details .cart .big-img img{
+        padding: 0px  !important;
+    }
+    .details .cart .imgs{
+        gap: 0 !important;
+    }
+    .cart{
+        height: 85% !important;
+    }
+    .details .cart h6 {
+        font-size: 30px;
+    }
+    .details .cart .btn {
+        width: 50%;
+    }
+    .details .cart .brg {
+        width: 100%;
+        font-size: 19px;
+        text-transform: lowercase;
+    }
+}

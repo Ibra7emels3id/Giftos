@@ -1,36 +1,35 @@
-// user info
-let useracunt = document.getElementById(`useracunt`),
-    account = document.getElementById(`account`),
-    logintex = document.querySelector(`.logintex`)
-let user = localStorage.getItem("username");
-let logoutNo = document.getElementById(`logoutNo`);
+// let useracunt = document.getElementById(`useracunt`),
+//     account = document.getElementById(`account`),
+//     logintex = document.querySelector(`.logintex`)
+// let user = localStorage.getItem("username");
+// let logoutNo = document.getElementById(`logoutNo`);
 
-function showAcount() {
-    if (user) {
-        logintex.remove()
-        account.style.display = `block`
+// function showAcount() {
+//     if (user) {
+//         logintex.remove()
+//         account.style.display = `block`
 
-    } else {
-        logintex.style.display = `block`
-        account.remove()
-    }
-}
-showAcount()
+//     } else {
+//         logintex.style.display = `block`
+//         account.remove()
+//     }
+// }
+// showAcount()
 
 // logout usar
 
-function logout() {
-    localStorage.removeItem("username");
-    location.reload()
-}
-function checklogout() {
-    if (user) {
-        logoutNo.style.display = `block`
-    } else {
-        logoutNo.style.display = `none`
-    }
-}
-checklogout()
+// function logout() {
+//     localStorage.removeItem("username");
+//     location.reload()
+// }
+// function checklogout() {
+//     if (user) {
+//         logoutNo.style.display = `block`
+//     } else {
+//         logoutNo.style.display = `none`
+//     }
+// }
+// checklogout()
 
 
 // icon list
@@ -142,7 +141,8 @@ const swiperOpinions = new Swiper('.mySwiperSli', {
 // Add card
 
 // show list Card
-let listProdect = document.querySelector(`.listProdect`)
+let listProdect = document.querySelectorAll(`.listProdect`)
+let listProdects = document.querySelector(`.listProdects`)
 let listCard = document.querySelector(`.listCard`)
 let iconShowNm = document.getElementById(`iconShowNm`);
 let Cancel = document.getElementById(`Cancel`);
@@ -186,11 +186,14 @@ function checkFilterValue() {
 }
 
 function AddDatatoHtml() {
-    listProdect.innerHTML = ``
+    listProdects.innerHTML = ``
+    listProdect.innerHTML = ''
+
     if (listProdectes.length > 0) {
         AllProductsCatgory.forEach(prodect => {
             let NewProdect = document.createElement('div')
-            NewProdect.classList.add('box', 'col-xl-3', 'col-lg-4' , 'col-md-6')
+
+            NewProdect.classList.add('box', 'col-xl-3', 'col-lg-4', 'col-md-6')
             NewProdect.dataset.id = prodect.id;
             NewProdect.innerHTML = `
                 <div class="p-3 bg-white rounded">
@@ -213,7 +216,10 @@ function AddDatatoHtml() {
                     </div>
                 </div>
             `;
-            listProdect.appendChild(NewProdect)
+
+            listProdects.appendChild(NewProdect)
+            listProdect.innerHTML = NewProdect
+
         })
     }
 }
@@ -263,9 +269,9 @@ const AddToCard = (id) => {
 const minusCard = (id) => {
     let positionthinprodect = cards.filter((value) => value.id == id);
     if (cards.length <= 0) {
-        
+
     } else if (cards[positionthinprodect].quantity === 1) {
-        
+
     } else {
         cards[positionthinprodect].quantity = cards[positionthinprodect].quantity - 1;
     }
@@ -303,7 +309,7 @@ const Addcardtohtml = () => {
             NewProdect.innerHTML = `
             <img src="${info.image[0]}" alt="">
             <div class="">
-                <h3 class='p-0 m-0 w-0 text-white'>${info.title.slice(0 , 12)}...</h3>
+                <h3 class='p-0 m-0 w-0 text-white'>${info.title.slice(0, 12)}...</h3>
             </div>
             <div class="numprodc">
                 <span>${Math.round(info.price * card.quantity)}$</span>
@@ -339,10 +345,10 @@ const Addcardtohtml = () => {
     AddDatatoHtml()
 }
 
-const dellToCard = (id)=>{
-    const DellProduct = cards.findIndex((it)=> it.id == id)
+const dellToCard = (id) => {
+    const DellProduct = cards.findIndex((it) => it.id == id)
     console.log(DellProduct);
-    cards.splice(DellProduct , 1)
+    cards.splice(DellProduct, 1)
     AddcardtoMemre()
     Addcardtohtml()
 }
@@ -370,16 +376,31 @@ const changeQuantity = (prodectIdNum, type) => {
     Addcardtohtml()
 }
 
+function searchDate(value) {
+    document.querySelector('.Product').innerHTML = '';
+    const product = listProdectes.filter((it) => {
+        return it.title.toLowerCase().includes(value.toLowerCase())
+    })
+    product.forEach((item) => {
+        let NewProdect = `
+        <li class='p-2 fs-3 border-bottom'><a href='/details.html?id= + ${item.id}' class="detalis" id="Detalis">${item.title}</a></li>
+            
+    `
+        document.querySelector('.Product').innerHTML += NewProdect
+    })
 
+}
 
 let initApp = () => {
     fetch('http://localhost:3000/products')
         .then(Response => Response.json())
         .then(data => {
             listProdectes = data;
-            searchData = data;     
+            searchData = data;
+
             AddDatatoHtml()
             checkFilterValue()
+            searchDate()
             // 
             if (localStorage.getItem('CardItem')) {
                 cards = JSON.parse(localStorage.getItem('CardItem'))
@@ -408,56 +429,29 @@ let iconClose = document.querySelector(`.iconClose`)
 
 
 
-function checkDetails(id) {
-    DetailsProdect.style.display = `flex`;
-    DetailsBox.style.display = `block`;
-    let DetalisShow = listProdectes.find((prodect) => prodect.id === id);
+// function checkDetails(id) {
+//     DetailsProdect.style.display = `flex`;
+//     DetailsBox.style.display = `block`;
+//     let DetalisShow = listProdectes.find((prodect) => prodect.id === id);
 
-    DetailsBox.innerHTML = `
-            <img src="${DetalisShow.imageUrl}" alt="">
-            <div class="text">
-                <h3>${DetalisShow.title}</h3>
-            </div>
-            <div class="numprodc">
-                <span>prise : $ ${DetalisShow.price}</span>
-            </div>
-            <div class="DetailsDataProdect">
-                <p>dolor sit amet consectetur adipisicing elit. Aliquid sequi, consequuntur dolorem amet minima incidunt, deleniti voluptas magnam sunt totam porro veritatis itaque ex delectus. Nihil esse rerum autem molestias.</p>
-            </div>
-            <button onclick="checkUserData()" class="addcard" id="btnBrodect">Add brodect</button>
-    `
-}
+//     DetailsBox.innerHTML = `
+//             <img src="${DetalisShow.imageUrl}" alt="">
+//             <div class="text">
+//                 <h3>${DetalisShow.title}</h3>
+//             </div>
+//             <div class="numprodc">
+//                 <span>prise : $ ${DetalisShow.price}</span>
+//             </div>
+//             <div class="DetailsDataProdect">
+//                 <p>dolor sit amet consectetur adipisicing elit. Aliquid sequi, consequuntur dolorem amet minima incidunt, deleniti voluptas magnam sunt totam porro veritatis itaque ex delectus. Nihil esse rerum autem molestias.</p>
+//             </div>
+//             <button onclick="checkUserData()" class="addcard" id="btnBrodect">Add brodect</button>
+//     `
+// }
 
 // icon search
 
-function searchDate(value) {
-    let NewProdect = ``;
-    for (let i = 0; i < listProdectes.length; i++) {
-        if (listProdectes[i].title.toLowerCase().includes(value.toLowerCase())) {
-            NewProdect += `
-            <div class="box">
-            <img src="${listProdectes[i].imageUrl}" alt="">
-            <div class="text">
-                <h3><u>${listProdectes[i].title}</u></h3>
-            </div>
-            <div class="numprodc">
-                <span>availables : <span id="Available">${listProdectes[i].Available}</span> </span>
-                <span>prise : $ ${listProdectes[i].price}</span>
-            </div>
-            <div class="icon">
-                <span id="New">New</span>
-                <i onclick="onlive(${listProdectes[i].id})" id="like-${listProdectes[i].id}" class="fa-solid fa-heart"></i>
-                <span id="num">0</span>
-            </div>
-            <div class="addProdect">
-            <button onclick="checkDetails(${listProdectes[i].id})" class="detalis" id="Detalis">Detalis</button>
-                <button onclick="checkUserData()" class="addcard" id="btnBrodect">Add brodect</button>
-            </div>
-            </div>`;
-            document.querySelector(`.listProdect`).innerHTML = NewProdect
-        }
-    }
-}
+
 
 // ======================
 // Add Loader  
@@ -465,7 +459,7 @@ function searchDate(value) {
 
 let Loaders = document.querySelectorAll('.Loader')
 window.addEventListener('load', () => {
-    Loaders.forEach((Loader)=>{
+    Loaders.forEach((Loader) => {
         Loader.classList.add('show')
         setTimeout(() => {
             document.body.removeChild(Loader)
