@@ -74,9 +74,9 @@ const swipers = new Swiper('.swiperhead', {
     loop: true,
     slidesPerView: 1,
 
-    autoplay: {
-        delete: 3000,
-    },
+    // autoplay: {
+    //     delete: 3000,
+    // },
     pagination: {
         el: '.swiper-pagination',
     },
@@ -175,7 +175,7 @@ selectFilter.addEventListener('change', (e) => {
 
 function checkFilterValue() {
     const FilterDAta = listProdectes.filter((it) => {
-        return it.title == FilterSelect
+        return it.category == FilterSelect
     })
     if (FilterSelect == 'all') {
         AllProductsCatgory = listProdectes
@@ -428,31 +428,6 @@ function checkDetails(id) {
     `
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function showData() {
-    DetailsProdect.style.display = `none`
-}
-showData()
-iconClose.addEventListener(`click`, () => DetailsProdect.style.display = `none`)
-
-
 // icon search
 
 function searchDate(value) {
@@ -483,3 +458,17 @@ function searchDate(value) {
         }
     }
 }
+
+// ======================
+// Add Loader  
+// ======================
+
+let Loaders = document.querySelectorAll('.Loader')
+window.addEventListener('load', () => {
+    Loaders.forEach((Loader)=>{
+        Loader.classList.add('show')
+        setTimeout(() => {
+            document.body.removeChild(Loader)
+        }, 2000);
+    })
+})

@@ -1,53 +1,64 @@
-
-@media (max-width: 1200px){ 
+@media (max-width: 1200px) {
     .shoping .parante .child-img img {
         width: 115%;
     }
-    
+
 }
-@media (max-width: 1100px){ 
-    .header-main .Navbar ul a{
+
+@media (max-width: 1100px) {
+    .header-main .Navbar ul a {
         padding: 15px 10px;
         margin: 0 8px;
     }
-    
+
 }
-@media (max-width: 970px){ 
-    .header-main .Navbar{
+
+@media (max-width: 970px) {
+    .header-main .Navbar {
         padding: 15px 30px;
     }
-    header .icon-lest{
+
+    header .icon-lest {
         display: block;
     }
-    .header-main .Navbar ul{
+
+    .header-main .Navbar ul {
         display: none;
     }
+
     .shoping .parante {
         flex-direction: column-reverse;
     }
+
     .shoping .parante .child-img {
         width: 100%;
     }
+
     .shoping .parante .child-img img {
         width: 100%;
     }
+
     .shoping .parante .child-text {
         width: 100%;
     }
+
     .shoping .parante .child-text .clickBideg {
         margin: 31px 0 30px;
     }
-    
+
     .pearant {
         flex-direction: column;
         padding: 50px 15px;
     }
+
     .pearant .child1 {
         width: 100%;
     }
+
     .pearant .child1 img {
         width: 100%;
     }
+
     .pearant .child2 {
         width: 100%;
     }
@@ -57,143 +68,183 @@
         flex-direction: column;
         text-align: center;
     }
+
     .footer .box {
         width: 100%;
     }
+
     .footer .box p {
         margin: 19px auto;
     }
+
     .footer .box form {
         display: grid;
         width: 50%;
         margin: auto;
     }
+
     .child .login {
         width: 80%;
     }
-    
-    
+
+
 }
-@media (max-width: 700px){ 
+
+@media (max-width: 700px) {
     .main .boxsis {
         flex-direction: column;
     }
+
     .main .boxsis .text {
-        width: 90%;
+        width: 100%;
         padding: 40px;
+        text-align: center;
     }
+
     .main .boxsis .text h5 {
         font-size: 35px;
     }
+
     .main .boxsis .text p {
         margin: 15px 0 35px;
         line-height: 20px;
     }
+
     .main .boxsis .img {
         width: 100%;
         margin-right: 0px;
+        display: none;
     }
+
     header {
         height: 170vh;
     }
-    .header-main {
-        height: 161vh;
+
+    .header-main .main {
+        height: 85%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .contanear-prodect h2 {
-        font-size: 30px;
-    }
-    .contanear-prodect select {
-        margin: 40px 30px;
-    }
-    .mySwiper {
-        width: 100%;
-        padding: 0px;
-    }
-    .mySwiper .title {
-        text-align: center;
-        font-size: 30px;
-    }
-    .Location {
-        flex-direction: column;
-    }
-    .Location .Location-map {
-        width: 100%;
-    }
-    .Location .contact {
-        width: 100%;
-    }
-    
-    
 }
-@media (max-width: 500px){ 
-    .header-main .Navbar .useracunt .account span{
+
+.contanear-prodect h2 {
+    font-size: 30px;
+}
+
+.contanear-prodect select {
+    margin: 40px 30px;
+}
+
+.mySwiper {
+    width: 100%;
+    padding: 0px;
+}
+
+.mySwiper .title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.Location {
+    flex-direction: column;
+}
+
+.Location .Location-map {
+    width: 100%;
+}
+
+.Location .contact {
+    width: 100%;
+}
+
+
+@media (max-width: 500px) {
+    .header-main .Navbar .useracunt .account span {
         display: none;
     }
+
     .pearant .child2 h4 {
         font-size: 30px;
     }
+
     .pearant .child2 .BuyNow {
         padding: 15px 30px;
         font-size: 15px;
     }
+
     .pearant .child2 .SeeMore {
         padding: 15px 30px;
         font-size: 15px;
     }
+
     header {
         height: 170vh;
     }
+
     .header-main {
-        height: 144vh;
+        /* height: 144vh; */
     }
+
     .shoping .parante .child-text a {
         padding: 12px 15px;
     }
-    .boxProdect{
+
+    .boxProdect {
         width: 86%;
     }
+
     .boxProdect .btnaddpro {
         width: 84%;
     }
+
     .boxProdect .box {
         padding: 13px 11px;
     }
+
     .boxProdect .box img {
         width: 50px;
     }
+
     .boxProdect .box .text h3 {
         font-size: 14px;
     }
+
     .boxProdect .box .numprodc span {
         font-size: 15px;
     }
+
     .boxProdect .box .NumCard .quantity {
         margin: 0 2px;
     }
-    .boxProdect .box .NumCard .plus ,
+
+    .boxProdect .box .NumCard .plus,
     .boxProdect .box .NumCard .minus {
         padding: 6px 10px;
         font-size: 15px;
     }
+
     /*  */
     .prolistout .box {
         width: 95%;
         padding: 20px 5px;
     }
+
     .prodectesBoxout .prolistout .box .NumCard .quantity {
         margin: 0 3px;
     }
+
     .prolistout .box img {
         width: 55px;
     }
-    
-    
-    
-    
-    
-    
-    
 
-    
-    
+
+
+
+
+
+
+
+
+
 }
