@@ -1,0 +1,1334 @@
+:root{
+    --primarybg: #f89cab;
+    --primarybgBtn: #db4566;
+    --primarybgbox: #eeeeee ;
+    --primarytext: #ddd ;
+    --primary1: #7fd7eb ; 
+    --primary2: #109dbd ; 
+    --primary3: #6929a5; 
+    --primary4: #109dbd ;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Readex Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+body{
+    position: relative;
+}
+
+/* login */
+.contenar{
+    background-color: var(--primarybgbox);
+    width: 100%;
+    height: 100vh;
+    
+
+}
+.child{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child .login{
+    border: 10px solid var(--primarybg);
+    width: 50%;
+    height: 500px;
+    background-color: var(--primarybgBtn);
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.child .Register{
+    padding: 5px;
+    height: 550px;
+}
+.child .login h3{
+    font-size: 70px;
+    color: var(--primarybg);
+    margin-top: 10px;
+}
+.child .login .input{
+    width: 80%;
+}
+.child .login .input input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    font-size: 20px;
+}
+.child .login .input input:focus{
+    color: #db4566;
+}
+.child .login .input button{
+    width: 70%;
+    height: 50px;
+    margin: 30px 0 0 15%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--primarybgBtn);
+    cursor: pointer;
+    transition: 0.3s ease ;
+}
+.child .login .input button:hover{
+    background-color: var(--primarybg);
+    color: var(--primarybgbox);
+}
+.child .login .input .submit{
+    margin-top: 10px;
+}
+.child .login .passRegss{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    
+}
+.child .login .passRegss a{
+    color: var(--primarybg);
+    font-size: 20px;
+    transition: 0.2s ease;
+}
+.child .login .passRegss a:hover{
+    color: var(--primarybgbox);
+}
+
+/* home  */
+/* header */
+header{
+    position: relative;
+    width: 100%;
+    height: 130vh;
+    /* background-color: var(--primarybgbox); */
+}
+header .main-Nav{
+display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+.listProdecthead{
+    height: 25vh;
+}
+header .titel{
+    text-align: center;
+    padding: 20px;
+}
+header .main-Nav i {
+    font-size: 25px;
+    padding: 13px;
+    background-color: var(--primarybgBtn);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+header .main-Nav i:hover{
+    background-color: var(--primarybg);
+}
+header .titel h2 a{
+    font-size: 30px;
+    font-weight: 800;
+    color: #000000;
+}
+header .icon-lest{
+    position: relative;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+
+}
+header .icon-lest span{
+    position: absolute;
+    background-color: #000000;
+    height: 3px;
+    width: 100%;
+    transition: 0.3s ease;
+    left: 0;
+}
+header .icon-lest span:first-child{
+    top: 1px;
+}
+header .icon-lest span:nth-child(2){
+    top: 13px;
+    width: 80%;
+}
+header .icon-lest span:last-child{
+    top: 26px;
+}
+header .icon-lest:hover span:nth-child(2){
+    width: 100%;
+}
+
+header .icon-lest span:first-child.show{
+    top: 14px;
+    transform: rotate(-45deg);
+}
+header .icon-lest span:nth-child(2).show{
+    display: none;
+}
+header .icon-lest span:last-child.show{
+    top: 14px;
+    transform: rotate(45deg);
+}
+/* search */
+.search{
+    width: 100%;
+}
+.search input{
+    width: 80%;
+    margin: 40px 10% ;
+    height: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 10px #ddd;
+    color: var(--primarybgBtn);
+    font-size: 18px;
+}
+.search input::placeholder{
+    color: #0000009a;
+    font-size: 15px;
+}
+/* boxProdect */
+.boxProdect{
+    position: fixed;
+    top: 0;
+    right: -1000px;
+    background-color: #000000bb;
+    height: 100vh;
+    width: 500px;
+    padding: 10px 30px 70px 30px ;
+    z-index: 100;
+    overflow: auto;
+    transition: 0.7s ease;
+}
+.prodectesBox{
+    position: relative;
+    width: 100%;
+    right: 0;
+    margin: 100px 0;
+    text-align: center;
+}
+
+
+
+.prolistout .box{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    background-color: var(--primarybgbox);
+    margin: 10px auto; 
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #db4566;
+    height: 100px;
+    
+}
+.prolistout .box img{
+    width: 70px;
+}
+.prodectesBoxout .btnaddpro button{
+    width: 300px;
+    margin: 60px 15px;
+    height: 42px;
+    outline: none;
+    border: none;
+    background-color: var(--primarybgBtn);
+    color: var(--primarybgbox);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.boxProdect.show{
+    right: 0px;
+}
+.boxProdect .btnaddpro{
+    position: fixed;
+    display: flex;
+    bottom: 5px;
+    width: 100%;
+}
+.prodectesBoxout .btnaddpro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boxProdect .listCard h5{
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    color: var(--primarybgBtn);
+    font-size: 15px;
+    padding: 100px;
+}
+.prodectesBoxout .prolistout h5 a,
+.boxProdect .listCard h5 a{
+    display: block;
+    margin: 30px;
+    padding: 19px;
+    background-color: var(--primarybgBtn);
+    color: var(--primarybgbox);
+}
+.boxProdect .btnaddpro button{
+    width: 250px;
+    margin: 0 5px;
+    height: 45px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border: 1px solid var(--primarybgBtn);
+}
+.boxProdect .btnaddpro button:first-child{
+    color: #db4566;
+}
+.boxProdect .btnaddpro button:last-child{
+    background-color: #db4566;
+}
+.boxProdect .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    background-color: var(--primarybgBtn);
+    padding: 13px 20px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px 0;
+    height: 125px;
+}
+.boxProdect .box img{
+    width: 70px;
+}
+.boxProdect .box .text p{
+    display: none;
+}
+.boxProdect .box .proNumber input{
+    width: 70px;
+}
+.boxProdect .box .numprodc span{
+    display: block;
+    
+}
+.boxProdect .box .icon{
+    display: none;
+}
+.boxProdect .box .NumCard .minus{
+    cursor: pointer;
+    background-color: #ddd;
+    color: #db4566;
+    padding: 10px 12px;
+    border-radius: 50%;
+}
+.boxProdect .box .NumCard .quantity{
+    margin: 0 13px;
+}
+.boxProdect .box .NumCard .plus{
+    cursor: pointer;
+    background-color: #ddd;
+    color: #db4566;
+    padding: 10px 12px;
+    border-radius: 50%;
+}
+.prodectesBoxout .prolistout .box .NumCard .quantity{
+    margin: 0 20px;
+}
+.prodectesBoxout .prolistout .box .NumCard .minus,
+.prodectesBoxout .prolistout .box .NumCard .plus{
+    cursor: pointer;
+    background-color: #ddd;
+    color: #db4566;
+    padding: 10px 14px;
+    border-radius: 50%;
+    border: 1px solid #db4566;
+}
+
+
+/* main */
+.header-main{
+    margin: auto;
+    width: 94%;
+    background-color: var(--primarybgBtn);
+    height: 110vh;
+    border-radius: 30px;
+}
+.prodects{
+    height: 0;
+}
+.header-main .Navbar{
+    background-color: #f9ece6;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    border-radius: 30px 30px 0 0;
+    padding: 10px 60px;
+
+}
+.header-main .Navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 0px;
+}
+.header-main .Navbar ul a{
+    padding: 15px 17px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #343434;
+}
+.header-main .Navbar ul .actian,
+.header-main .Navbar ul a:hover{
+    background-color: #ffff;
+}
+.header-main .Navbar .useracunt{
+    display: flex;
+    align-items: center;
+    gap:50px;
+    padding: 0 10px;
+}
+.header-main .Navbar .useracunt.account.show{
+    display: none;
+}
+.header-main .Navbar .useracunt .logintex a{
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.header-main .Navbar .useracunt .iconShop{
+    position: relative;
+}
+.header-main .Navbar .useracunt .iconShop i {
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+.header-main .Navbar .useracunt .iconShop span{
+    display: block;
+    position: absolute;
+    background-color: var(--primarybgBtn);
+    border-radius: 50%;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-size: 10px;
+    left: 13px;
+    top: -12px;
+}
+
+.header-main .Navbar .logout:hover,
+.header-main .Navbar .account:hover,
+.header-main .Navbar .useracunt .iconShop i:hover,
+.header-main .Navbar .useracunt .logintex a:hover{
+    color: var(--primarybgBtn);
+}
+.header-main .Navbar .account{
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.header-main .Navbar .logout{
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* main slider  */
+.main {
+    position: relative;
+}
+/* header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dddddd6c;
+
+} */
+.main .boxsis{
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+}
+.main .boxsis .text{
+    width: 45%;
+}
+.main .boxsis .text h5{
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--primarybgbox);
+}
+.main .boxsis .text p{
+    margin: 15px 0 35px;
+    color: var(--primarybgbox);
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+.main .boxsis .text a{
+    padding: 12px 20px;
+    background-color: var(--primarybg);
+    border-radius: 5px;
+    color: var(--primarybgbox);
+}
+
+.main .boxsis .img{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -80px;
+}
+.main .boxsis .img img{
+
+}
+
+.swiper-pagination-bullet-active{
+    width: 20px;
+    border-radius: 6px;
+    height: 8px;
+    color: white;
+    background-color: white;
+}
+.main .follow{
+    text-align: center;
+    position: absolute;
+    left: 102px;
+    bottom: -95px;
+    background-color: #fff !important;
+    z-index: 100;
+    width: 188px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+.swiper-buttonnx{
+    left: 150px !important;
+    color: var(--primarybgBtn) ;
+    
+}
+.swiper-buttonpr{
+    color: var(--primarybgBtn) ;
+}
+/* prodect */
+.contanear-prodect{
+    margin: 100px 0;
+}
+.contanear-prodecthead{
+    display: none;
+}
+
+.contanear-prodect h2{
+    font-weight: 800;
+    color: #000000;
+    text-align: center;
+    font-size: 40px;
+}
+.contanear-prodect select{
+    height: 40px;
+    width: 200px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    margin-right: 70px;
+    font-size: 20px;
+    background-color: var(--primarybgbox);
+    padding: 10px 15px;
+    border-radius: 5px ;
+}
+.contanear-prodect .listProdect{
+    width: 90%;
+    margin: auto;
+    margin: 100px auto ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    
+}
+
+.contanear-prodect .listProdect .box{
+    position: relative;
+    width: 300px;
+    background-color: var(--primarybgbox);
+    text-align: center;
+    padding: 30px ;
+    /* display: none; */
+    border-radius: 4px;
+    
+}
+.contanear-prodect .listProdect .box img{
+    width: 50%;
+    height: 220px;
+    text-align: center;
+}
+.contanear-prodect .listProdect .box h3{
+    margin: 20px 0;
+    font-size: 25px;
+    color: #343434;
+}
+.contanear-prodect .listProdect .box h3 u{
+    text-decoration: dashed;
+}
+.contanear-prodect .listProdect .box p{
+    font-size: 18px;
+    color: #343434a8;
+}
+
+.contanear-prodect .listProdect .box .numprodc{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+.contanear-prodect .listProdect .box .numprodc span{
+    font-size: 15px;
+
+}
+
+.contanear-prodect .listProdect .box .icon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    top: 20px;
+    font-size: 20px;
+    /* position: relative; */
+}
+.contanear-prodect .listProdect .box .icon span{
+    display: block;
+    cursor: pointer;
+    color: var(--primarybgBtn);
+    background-color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contanear-prodect .listProdect .box .icon i{
+    position: absolute;
+    left: 270px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px ;
+    z-index: 99;
+}
+.contanear-prodect .listProdect .box .icon i.show{
+    color: var(--primarybgBtn);
+}
+.contanear-prodect .listProdect .box .icon #num{
+    position: absolute;
+    left: 255px;
+    top: 30px;
+    background: none;
+}
+
+.contanear-prodect .listProdect .box .addProdect{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contanear-prodect .listProdect .box .addProdect #btnBrodect{
+    background-color: var(--primarybgBtn);
+    padding: 10px 17px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 3px;
+    cursor: pointer; 
+}
+.contanear-prodect .listProdect .box .addProdect .detalis{
+    background-color: var(--primarybg);
+    padding: 10px 17px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 3px;
+    cursor: pointer; 
+}
+.contanear-prodect .ViewAllProducts{
+    text-align: center ;
+}
+.contanear-prodect .ViewAllProducts a{
+    padding: 17px 35px;
+    border-radius: 5px;
+    color: #ddd;
+    background-color: var(--primarybgBtn);
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+.contanear-prodect .ViewAllProducts a:hover{
+    background-color: var(--primarybg);
+    transition: all 0.3s;
+    color: #ffffff;
+}
+/* Nav list */
+.NavList{
+        position: fixed;
+        left: -120%;
+        top: 142px;
+        background-color: #000000eb;
+        width: 90%;
+        margin: auto;
+        height: 80vh;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        border-radius: 15px;
+        transition: ease 1s;
+}
+.NavList.show{
+    left: 5%;
+}
+.NavList .iconX{
+    margin: 81px 0;
+}
+.NavList .iconX i{
+    font-size: 41px;
+    color: #ddd;
+}
+.NavList ul{
+    width: 100%;
+}
+
+.NavList ul li a{
+    display: block;
+    width: 80%;
+    margin: 30px auto;
+    padding: 11px 0;
+    background-color: #db4566;
+    border-bottom: #ddd solid 2px;
+    font-size: 18px;
+    color: #dddd;
+}
+
+
+/* details prodect  */
+.DetailsProdect{
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000c9;
+    z-index: 100;
+    opacity: 1;
+    pointer-events: auto;
+}
+.DetailsProdect .iconClose{
+    position: absolute;
+    right : 30px ;
+    top: 30px;
+    width: 40px;
+    height: 30px;
+    /* background-color: #7fd7eb; */
+    transition: all 1s;
+}
+.DetailsProdect .iconClose .icon{
+    position: relative;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 1s;
+}
+.DetailsProdect .iconClose .first{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primarybgBtn);
+    transform: rotate(-48deg);
+    border-radius: 3px;
+    transition: all 1s;
+}
+.DetailsProdect .iconClose .childs{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primarybgBtn);
+    transform: rotate(48deg);
+    border-radius: 3px;
+    transition: all 1s;
+}
+.DetailsProdect .iconClose:hover .first,
+.DetailsProdect .iconClose:hover .childs{
+    background-color: var(--primarybgbox);
+}
+
+.DetailsProdect .DetailsBox{
+    position: relative;
+    width: 600px;
+    text-align: center;
+    min-height: 500px;
+    box-shadow: 0 0 100px #ddd;
+    background-color: #ddd;
+    border-radius: 10px;
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.DetailsProdect .DetailsBox img{
+    margin-bottom: 20px;
+}
+
+.DetailsProdect .DetailsBox .text h3{
+    font-size: 30px;
+    color: #909090;
+}
+.DetailsProdect .DetailsBox .numprodc{
+    font-size: 15px;
+    margin: 10px auto;
+    background-color: #343434;
+    color: #ddd;
+    border-radius: 3px;
+    width: 100px;
+    padding: 10px;
+}
+.DetailsProdect .DetailsBox .DetailsDataProdect{
+    font-size: 15px;
+    margin: 10px;
+}
+
+.DetailsProdect .DetailsBox button{
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    color: #ddd;
+    border-radius: 3px;
+    margin-top: 20px;
+    background-color: var(--primarybgBtn);
+    font-size: 20px;
+    cursor: pointer;
+}
+/*  */
+.ShowِAddCardMess{
+
+}
+
+.ShowِAddCardMess{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primarybg);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+.ShowِAddCardMess #Spanshow{
+    position: absolute;
+    background-color: var(--primarybgBtn);
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    transition: all 2s;
+    border-radius:  0 0 5px 5px;
+}
+.ShowِAddCardMess #Spanshow.show{
+    width: 100%;
+}
+
+
+/* shoping */
+.shoping{
+    margin: 100px 0;
+}
+.shoping .parante{
+    width: 85%;
+    margin: auto;
+    background-color: #7fd7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px 0;
+    border-radius: 15px;
+}
+.shoping .parante .child-img{
+    width: 45%;
+}
+.shoping .parante .child-img img{
+    width: 100%;
+    vertical-align: middle;
+}
+.shoping .parante .child-text{
+    width: 45%;
+}
+.shoping .parante .child-text h4{
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #ffffff;
+}
+.shoping .parante .child-text p{
+    font-size: 17px;
+    width: 100%;
+    color: #ffffff;
+    margin: 23px 0;
+    
+}
+.shoping .parante .child-text .clickBideg{
+    margin: 70px 0 30px;
+}
+.shoping .parante .child-text a{
+    padding: 12px 40px;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 3px;
+}
+.shoping .parante .child-text .BuyNow{
+    background-color: #109dbd;
+    margin-right: 12px;
+}
+.shoping .parante .child-text .SeeMore{
+    background-color: #ffffff;
+    color: #109dbd;
+}
+
+/* WHY SHOP WITH US */
+.mySwiper {
+    width: 89%;
+    height: 100%;
+    margin: 100px auto;
+    padding: 50px;
+}
+.mySwiper .title{
+    text-align: center;
+    font-size: 40px;
+}
+.mySwiper .swiper-wrapper{
+    margin-top: 70px;
+}
+.boxslider{
+    text-align: center;
+    font-size: 18px;
+    background-color: #f9f8f7;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2px;
+    /* border: 1px solid #db4566; */
+    padding: 30px 0;
+}
+.boxslider .icon i{
+    font-size: 45px;
+}
+.boxslider .text h3{
+    margin: 18px;
+    color: var(--primarybgBtn);
+    font-size: 25px;
+}
+.boxslider .text p{
+    width: 70%;
+    margin: auto;
+}
+
+
+/* why Us */
+
+.pearant{
+    width: 80%;
+    margin: 100px auto;
+    background-color: #6929a5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 70px;
+    border-radius: 25px;
+}
+.pearant .child1{
+    width: 50%;
+}
+.pearant .child1 img{
+    width: 80%;
+}
+.pearant .child2{
+    width: 50%;
+}
+.pearant .child2 h4{
+    font-size: 44px;
+    color: #ffffff;
+}
+.pearant .child2 p{
+    color: #ffffff;
+    margin: 20px 0;
+    line-height: 23px;
+    letter-spacing: 1.2px;
+}
+.pearant .child2 .clickBideg{
+    margin-top: 45px;
+}
+.pearant .child2 .BuyNow{
+    padding: 15px 50px;
+    background-color: white;
+    color: #6929a5 ;
+    margin-right: 12px;
+    font-size: 18px;
+}
+.pearant .child2 .SeeMore{
+    padding: 15px 50px;
+    background-color: #7d42b4;
+    color:  white ;
+    font-size: 18px;
+}
+
+/* contact  */
+
+#Location {
+    padding: 0 0 100px;
+}
+#Location h4 {
+    font-size: 35px;
+    text-align: left;
+    padding: 100px 0 0px;
+    margin-left: 80px;
+}
+.Location {
+    padding: 40px 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.Location .contact {
+    width: 48%;
+    display: grid;
+    margin: 0px;
+}
+ 
+.Location .contact form {
+    /* width: 80%; */
+    
+}
+
+.Location .contact form input {
+    width: 100%;
+    margin: 0px 0 15px;
+    height: 50px;
+    padding: 10px 10px;
+    letter-spacing: 4.5px;
+    outline: none;
+}
+  
+  .Location .contact form .masseg {
+    height: 115px;
+    overflow: scroll;
+}
+
+.Location .contact form .submit {
+    margin: 0;
+    background-color: #341661;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    letter-spacing: 2.5px;
+}
+  
+.Location .Location-map {
+    width: 48%;
+}
+  
+.Location .Location-map iframe {
+    width: 100%;
+}
+  
+#Location .contact-icon {
+    text-align: center;
+}
+  
+#Location .contact-icon a {
+    margin: 50px;
+    padding: 15px 30px;
+    background-color: #341661;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Customer opinions */
+
+.Customer{
+    margin: 100px auto;
+    width: 70%;
+    position: relative;
+}
+.Customer .title{
+    text-align: center; 
+    color: #000000;
+    font-size: 35px;
+    font-weight: 700px;
+
+}
+.Customer .mySwiperSli{
+    margin-top: 60px;
+    background-color: #f9f8f7;
+    box-shadow: 0 0 10px #ddd;
+    position: relative;
+}
+.Customer .mySwiperSli .CustomerChild .box{
+    padding: 30px 0;
+}
+.Customer .mySwiperSli .CustomerChild .box h3{
+    padding: 10px 30px;
+    color: brown;
+    font-size: 23px;
+}
+.Customer .mySwiperSli .CustomerChild .box h6{
+    padding: 10px 30px;
+    font-size: 16px;
+    color: #9a9a9a;
+}
+.Customer .mySwiperSli .CustomerChild .box p{
+    width: 80%;
+    padding: 0 30px ;
+}
+.Customer .swiper-button-next{
+    position: absolute;
+    right: -45px;
+    top: 154px;
+    background-color: var(--primarybgBtn);
+    padding: 40px 20px;
+    border-radius: 7px;
+    width: 20px;
+    color: #ddd;
+}
+.Customer .swiper-button-prev{
+    position: absolute;
+    left: -45px;
+    top: 154px;
+    background-color: var(--primarybgBtn);
+    padding: 40px 20px;
+    border-radius: 7px;
+    width: 20px;
+    color: #ddd;
+}
+
+/* start footer */
+footer {
+    background-color: #2d2d2d;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .footer .box {
+    width: 300px;
+  }
+  
+  .footer .box h5 {
+    display: block;
+    margin: 20px 0;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+  }
+  
+  .footer .box .titel a {
+    display: block;
+    margin: 12px 0;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .footer .box .icon a {
+    display: inline-block;
+    margin: 22px 15px 12px 0;
+    color: white;
+    font-size: 20px;
+    transition: ease 0.3s;
+  }
+  
+  .footer .box a:hover {
+    color: var(--primarybgBtn);
+  }
+  
+  .footer .box p {
+    width: 90%;
+    margin: 20px 0;
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  
+  .footer .box a {
+    display: block;
+    margin: 20px 0;
+    color: white;
+    font-size: 18px;
+    line-height: 25px;
+    transition: ease 0.3s;
+  }
+  
+  .footer .box form {
+    display: grid;
+  }
+  
+  .footer .box form input[type=email] {
+    color: white;
+    margin: 30px 0;
+    height: 25px;
+    border: none;
+    outline: 0px solid white;
+    background-color: #3d3d3e;
+    border-bottom: 1px solid white;
+    padding: 13px 10px;
+  }
+  
+  .footer .box form input[type=email]::placeholder {
+    letter-spacing: 3px;
+    color: white;
+  }
+  
+  .footer .box form input[type=submit] {
+    height: 40px;
+    font-size: 18px;
+    background-color: var(--primarybgBtn);
+    border: none;
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+    transition: ease 0.3s;
+  }
+  
+  .footer .box form input[type=submit]:hover {
+    background-color: #db456630;
+  }
+  
+  .copy-right {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 16px;
+  }
+
+
+  /* loder */
+
+.loder{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+    
+}
+.loder .imgLod{
+    width: 150px;
+}
+
+
+/* icon Scroll up */
+
+.iconScroll{
+    position: fixed;
+    right: -100px;
+    bottom: 40px;
+    z-index: 100;
+    transition: ease 0.3s;
+}
+.iconScroll.show{
+    right: 30px;
+}
+.iconScroll i{
+    padding: 10px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: #f89cab;
+    cursor: pointer;
+    animation: upscrool  1s infinite alternate;
+}
+
+@keyframes upscrool {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(15px);
+    }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- logo icon -->
+    <link rel="icon" href="uplouds/imgs/favicon.png">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- boot Strap -->
+    <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+    <!--  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+
+</head>
+
+<body>
+    <header style="height: auto;">
+        <div class="contenaer">
+            <div style="background: none; height: auto; width: 100%;" class="header-main">
+                <div class="Navbar">
+                    <div id="listIcon" class="icon-lest">
+                        <span id="first"></span>
+                        <span id="nth"></span>
+                        <span id="last"></span>
+                    </div>
+                    <ul class="m-0">
+                        <li><a class="actian" href="index.html">home</a></li>
+                        <li><a href="prodectes.html">shop</a></li>
+                        <li><a href="whyUs.html">why us</a></li>
+                        <li><a href="testimnial.html">TESTIMONIAL</a></li>
+                        <li><a href="contact.html">contact us</a></li>
+                    </ul>
+                    <div id="useracunt" class="useracunt">
+                        <div class="logintex">
+                            <a href="login.html">
+                                <i class="fa-solid fa-user"></i>
+                                login</a>
+                        </div>
+                        <div id="account" class="account">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <span>account</span>
+                        </div>
+                        <div class="iconShop">
+                            <i id="iconShowNm" class="fa-solid fa-cart-shopping"></i>
+                            <span id="shop"></span>
+                        </div>
+                        <div id="logoutNo" class="logout">
+                            <i onclick="logout()" class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="details">
+            <div class="row details-box  w-100 m-auto">
+                <!-- <div class="col-6 w-50">
+                    <div class="cart px-5 pb-5 mx-5 gap-2 ">
+                        <div class="big-img">
+                            <img id="bigImg" class="w-100" src="uplouds/imgs/1-removebg-preview.png" alt="">
+                        </div>
+                        <div class="imgs w-100 d-flex justify-content-center gap-3">
+                            <img class=" rounded d-flex align-items-center justify-content-center"
+                                src="uplouds/imgs/2-removebg-preview.png" alt="">
+                            <img class=" rounded d-flex align-items-center justify-content-center"
+                                src="uplouds/imgs/2-removebg-preview.png" alt="">
+                            <img class=" rounded d-flex align-items-center justify-content-center"
+                                src="uplouds/imgs/2-removebg-preview.png" alt="">
+                            <img class=" rounded d-flex align-items-center justify-content-center"
+                                src="uplouds/imgs/2-removebg-preview.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 w-50">
+                    <div class="cart py-5 my-5">
+                        <p class="fs-4">Home / category</p>
+                        <h6>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h6>
+                        <span class="price ">$199.99</span>
+                        <button class=" mb-3 btn btn-success">Add To Cart</button>
+                        <span class="fs-3 fw-bold">Product Details</span>
+                        <p class="brg">Your perfect pack for everyday use and walks in the forest. Stash your laptop (up
+                            to 15 inches) in the padded sleeve, your everyday.</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--  -->
+    <script>
+
+        let initApp = () => {
+            fetch('http://localhost:3000/products')
+                .then(Response => Response.json())
+                .then(data => {
+                    listProdectes = data;
+                    DetailsData()
+                })
+        }
+        initApp()
+
+
+        function DetailsData() {
+            let id = new URLSearchParams(window.location.search).get('id')
+            console.log(id);
+            let ThisProdect = listProdectes.filter(value => value.id == id);
+
+            console.log(ThisProdect)
+            let newproduct = `
+            <div class="col-6 w-50 h-100">
+                    <div class="cart px-5 pb-5 mx-5 gap-2 h-100">
+                        <div class="big-img h-100">
+                            <img id="bigImg" class="w-100 h-100 p-5 " src=${ThisProdect[0].image[0]} alt="">
+                        </div>
+                        <div class="imgs w-100 d-flex justify-content-center gap-3">
+                            <img onclick="Cheangimg('${ThisProdect[0].image[0]}')" class=" rounded d-flex align-items-center justify-content-center"
+                                src=${ThisProdect[0].image[0]} alt="">
+                            <img onclick="Cheangimg('${ThisProdect[0].image[1]}')" class=" rounded d-flex align-items-center justify-content-center"
+                                src=${ThisProdect[0].image[1]} alt="">
+                            <img onclick="Cheangimg('${ThisProdect[0].image[2]}')"class=" rounded d-flex align-items-center justify-content-center"
+                                src=${ThisProdect[0].image[2]} alt="">
+                            <img onclick="Cheangimg('${ThisProdect[0].image[3]}')" class=" rounded d-flex align-items-center justify-content-center"
+                                src=${ThisProdect[0].image[3]} alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 w-50">
+                    <div class="cart py-5 my-5">
+                        <p class="fs-4">Home / category</p>
+                        <h6>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h6>
+                        <span class="price ">$199.99</span>
+                        <button class=" mb-3 btn btn-success">Add To Cart</button>
+                        <span class="fs-3 fw-bold">Product Details</span>
+                        <p class="brg">Your perfect pack for everyday use and walks in the forest. Stash your laptop (up
+                            to 15 inches) in the padded sleeve, your everyday.</p>
+                    </div>
+                </div>
+            `
+
+            document.querySelector('.details-box').innerHTML = newproduct
+
+
+        }
+
+        
+        function Cheangimg(src) {
+            let bigImg = document.getElementById('bigImg')
+            bigImg.src  = src
+        }
+
+    </script>
+</body>
+
+</html>

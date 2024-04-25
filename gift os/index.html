@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- logo icon -->
+    <link rel="icon" href="uplouds/imgs/favicon.png">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!--  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+
+</head>
+<body>
+
+
+    <!-- <div class="loder">
+        <img class="imgLod" src="uplouds/imgs/loder(2).gif" alt="">
+    </div> -->
+
+    <div class="iconScroll">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+<header>
+    <div class="contenaer">
+        <div class="main-Nav">
+            <div class="titel">
+                <h2><a href="index.html">GIFTOS</a></h2>
+            </div>
+            <div class="searchIcon">
+                <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <!-- <input type="search" class="search" onkeyup="searchDate(this.value)"  placeholder="search to titel or price or Category" name="" id="searchIn"> -->
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="Navbar">
+                <div id="listIcon" class="icon-lest">
+                    <span id="first"></span>
+                    <span id="nth"></span>
+                    <span id="last"></span>
+                </div>
+                <ul>
+                    <li><a class="actian" href="index.html">home</a></li>
+                    <li><a href="prodectes.html">shop</a></li>
+                    <li><a href="whyUs.html">why us</a></li>
+                    <li><a href="testimnial.html">TESTIMONIAL</a></li>
+                    <li><a href="contact.html">contact us</a></li>
+                </ul>
+                <div id="useracunt" class="useracunt">
+                    <div class="logintex">
+                        <a href="login.html">
+                            <i class="fa-solid fa-user"></i>
+                            login</a>
+                    </div>
+                    <div id="account" class="account">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <span>account</span>
+                    </div>
+                    <div class="iconShop">
+                        <i id="iconShowNm" class="fa-solid fa-cart-shopping"></i>
+                        <span id="shop"></span>
+                    </div>
+                    <div id="logoutNo" class="logout">
+                        <i onclick="logout()" class="fa-solid fa-right-from-bracket"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="swiper swiperhead">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide boxsis">
+                            <div class="text">
+                                <h5 class="headtitle">Welcome To Our <br/>
+                                    Gift Shop</h5>
+                                <p>Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.</p>
+                                <a href="#">contact us</a>
+                            </div>
+                            <div class="img">
+                                <img src="uplouds/imgs/slider-img.png" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide boxsis">
+                            <div class="text">
+                                <h5>Welcome To Our <br/>
+                                    Gift Shop</h5>
+                                <p>Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.</p>
+                                <a href="#">contact us</a>
+                            </div>
+                            <div class="img">
+                                <img src="uplouds/imgs/slider-img.png" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide boxsis">
+                            <div class="text">
+                                <h5>Welcome To Our <br/>
+                                    Gift Shop</h5>
+                                <p>Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.</p>
+                                <a href="#">contact us</a>
+                            </div>
+                            <div class="img">
+                                <img src="uplouds/imgs/slider-img.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- If we need navigation buttons -->
+                </div>
+                <div class="follow">
+                    <div class="swiper-button-prev swiper-buttonpr"></div>
+                    <div class="swiper-button-next swiper-buttonnx"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- list icon list link -->
+    <div class="NavList">
+        <!-- <div class="iconX">
+            <i class="fa-solid fa-xmark"></i>
+        </div> -->
+        <ul>
+            <li><a class="actian" href="index.html">home</a></li>
+            <li><a href="prodectes.html">shop</a></li>
+            <li><a href="whyUs.html">why us</a></li>
+            <li><a href="testimnial.html">TESTIMONIAL</a></li>
+            <li><a href="contact.html">contact us</a></li>
+        </ul>
+    </div>
+
+<!-- list Card  -->
+<div class="boxProdect">
+    <div id="" class="listCard">
+        
+    </div>
+    <div id="btnaddpro" class="btnaddpro">
+        <button  id="Cancel">Cancel</button>
+        <button  id="ViewProdect" onclick="ViewProdects()">ViewProdects</button>
+    </div>
+</div>
+
+
+
+<!-- prodect -->
+<section>
+    <div class="contanear-prodect">
+        <h2>LATEST PRODUCTS</h2>
+        <select id="selectFilter">
+            <option hidden>filter to prodect</option>
+            <option value="all">All</option>
+            <option value="watch">watch</option>
+            <option value="teddy Bear">Teddy Bear</option>
+            <option value="ring">Ring</option>
+            <option value="flower Bouquet">Flower Bouquet</option>
+            <option value="bouquet">Bouquet</option>
+        </select>
+        <div class="listProdect">
+            
+        </div>
+        <div class="ViewAllProducts">
+            <a href="prodectes.html">View All Products</a>
+        </div>
+    </div>
+</section>
+
+            <!-- details prodect -->
+            <div class="DetailsProdect">
+                <div class="iconClose">
+                    <div class="icon">
+                        <span class="first"></span>
+                        <span class="childs"></span>
+                    </div>
+                </div>
+                <div id="" class="DetailsBox">
+                    
+                </div>
+            </div>
+
+
+    <!-- showAddToCartMessage -->
+    <div class="ShowِCardMess">
+        
+    </div>
+
+    <!-- shoping -->
+
+    <section>
+        <div class="shoping">
+            <div class="parante">
+                <div class="child-img">
+                    <img src="uplouds/imgs/saving-img.png" alt="">
+                </div>
+                <div class="child-text">
+                    <h4>BEST SAVINGS ON <br/>
+                        NEW ARRIVALS</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum assumenda! Explicabo aspernatur, distinctio quod quia minus commodi ad molestias! Ex sequi velit nihil accusantium a! Nisi officiis fugiat doloribus?</p>
+                    <div class="clickBideg">
+                        <a class="BuyNow" href="">Buy Now</a>
+                        <a class="SeeMore" href="">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SHOP WITH US -->
+    <section>
+        <div class="swiper mySwiper">
+            <h3 class="title">WHY SHOP WITH US</h3>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="text">
+                        <h3>support</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Best Quality</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Fast Delivery</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Free Shiping</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="text">
+                        <h3>support</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Best Quality</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Fast Delivery</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+                <div class="swiper-slide boxslider">
+                    <div class="icon">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Free Shiping</h3>
+                        <p>variations of passages of Lorem Ipsum available</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- why us -->
+    <section>
+        <div class="pearant">
+            <div class="child1">
+                <img src="uplouds/imgs/gifts.png" alt="">
+            </div>
+            <div class="child2">
+                <h4>GIFTS FOR YOUR <br/>
+                    LOVED ONESS</h4>
+                <p>Omnis ex nam laudantium odit illum harum, excepturi accusamus at corrupti, velit blanditiis unde perspiciatis, vitae minus culpa? Beatae at aut consequuntur porro adipisci aliquam eaque iste ducimus expedita accusantium?</p>
+                <div class="clickBideg">
+                    <a class="BuyNow" href="">Buy Now</a>
+                    <a class="SeeMore" href="">See More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="Location">
+        <h4>contact us</h4>
+        <div class="Location">
+            <div class="Location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3631.239512485893!2d39.62656218500473!3d24.477156784236275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDI4JzM3LjgiTiAzOcKwMzcnMjcuNyJF!5e0!3m2!1sar!2seg!4v1702156794877!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact">
+                <form action="">
+                    <input type="text" name="" id="" placeholder="Enter Name ">
+                    <input type="number" name="" id="" placeholder="Enter Number phone">
+                    <input type="email" name="" id="" placeholder="enter Email">
+                    <input class="masseg" type="text" name="" id="" placeholder="enter mass">
+                    <input class="submit" type="submit" value=" أرسال">
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Customer opinions -->
+    <section>
+        <div class="Customer">
+            <h3 class="title">TESTIMONIAL</h3>
+            <div class="swiper mySwiperSli"> 
+                <div class="swiper-wrapper CustomerChild">
+                    <div class="swiper-slide box">
+                        <h3>Brad Johns</h3>
+                        <div class="text">
+                            <h6>Default model text</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aliquam sapiente ducimus laborum magnam porro ab illo provident id. Magni odit dolorem, quaerat ipsum neque in quod unde quam culpa!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box ">
+                        <h3>Brad Johns</h3>
+                        <div class="text">
+                            <h6>Default model text</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aliquam sapiente ducimus laborum magnam porro ab illo provident id. Magni odit dolorem, quaerat ipsum neque in quod unde quam culpa!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box ">
+                        <h3>Brad Johns</h3>
+                        <div class="text">
+                            <h6>Default model text</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aliquam sapiente ducimus laborum magnam porro ab illo provident id. Magni odit dolorem, quaerat ipsum neque in quod unde quam culpa!</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+
+    <!-- start footer  -->
+<footer>
+    <div class="footer">
+        <div class="box">
+            <div class="titel">
+                <h5>Address</h5>
+                <a href="">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Location
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-phone"></i>
+                    Call
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-envelope"></i>
+                    Email
+                </a>
+            </div>
+            <div class="icon">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="box">
+            <h5>Info</h5>
+            <p>necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful</p>
+        </div>
+        <div class="box">
+            <h5>Links</h5>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">services</a>
+            <a href="">why Us</a>
+            <a href="">tema</a>
+        </div>
+        <div class="box">
+            <h5>Subscribe</h5>
+            <form action="">
+                <input type="email" placeholder="Email" value="">
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+</footer>
+<div class="copy-right">
+    © 2023 All Rights Reserved By Free Html Templates
+</div>
+<!-- end footer -->
+    
+
+
+
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+        
