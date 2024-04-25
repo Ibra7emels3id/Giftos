@@ -172,13 +172,12 @@
                 </div>
                 <div class="col-lg-6  ">
                     <div class="cart py-5 my-5">
-                        <p class="fs-4">Home / category</p>
-                        <h6>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h6>
-                        <span class="price ">$199.99</span>
+                        <p class="fs-4">Home / ${ThisProdect[0].category} category</p>
+                        <h6>${ThisProdect[0].title}</h6>
+                        <span class="price ">$${ThisProdect[0].price}</span>
                         <button class=" mb-3 btn btn-success">Add To Cart</button>
                         <span class="fs-3 fw-bold">Product Details</span>
-                        <p class="brg">Your perfect pack for everyday use and walks in the forest. Stash your laptop (up
-                            to 15 inches) in the padded sleeve, your everyday.</p>
+                        <p class="brg">${ThisProdect[0].description}.</p>
                     </div>
                 </div>
             `
