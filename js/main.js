@@ -1,38 +1,15 @@
-// let useracunt = document.getElementById(`useracunt`),
-//     account = document.getElementById(`account`),
-//     logintex = document.querySelector(`.logintex`)
-// let user = localStorage.getItem("username");
-// let logoutNo = document.getElementById(`logoutNo`);
+let listProdect = document.querySelectorAll(`.listProdect`)
+let listProdects = document.querySelector(`.listProdects`)
+let listCard = document.querySelector(`.listCard`)
+let iconShowNm = document.getElementById(`iconShowNm`);
+let Cancel = document.getElementById(`Cancel`);
+let boxProdect = document.querySelector(`.boxProdect`);
+let itemProdect = document.querySelector('.itemProdect');
+let Available = document.getElementById(`Available`)
 
-// function showAcount() {
-//     if (user) {
-//         logintex.remove()
-//         account.style.display = `block`
-
-//     } else {
-//         logintex.style.display = `block`
-//         account.remove()
-//     }
-// }
-// showAcount()
-
-// logout usar
-
-// function logout() {
-//     localStorage.removeItem("username");
-//     location.reload()
-// }
-// function checklogout() {
-//     if (user) {
-//         logoutNo.style.display = `block`
-//     } else {
-//         logoutNo.style.display = `none`
-//     }
-// }
-// checklogout()
-
-
-// icon list
+// ======================
+// List Icons  
+// ======================
 
 let listIcon = document.getElementById(`listIcon`),
     first = document.getElementById(`first`),
@@ -47,7 +24,10 @@ listIcon.addEventListener(`click`, () => {
     NavList.classList.toggle(`show`)
 })
 
+
+// ======================
 // icon Scroll Up
+// ======================
 
 let iconScroll = document.querySelector(`.iconScroll`);
 
@@ -67,15 +47,16 @@ iconScroll.onclick = function () {
 
 
 
+// ======================
 // slider header
+// ======================
 
 const swipers = new Swiper('.swiperhead', {
     loop: true,
     slidesPerView: 1,
-
-    // autoplay: {
-    //     delete: 3000,
-    // },
+    autoplay: {
+        delete: 3000,
+    },
     pagination: {
         el: '.swiper-pagination',
     },
@@ -89,7 +70,10 @@ const swipers = new Swiper('.swiperhead', {
 
 
 
-// WHY SHOP WITH US
+// ======================
+// WHY SHOP WITH US 
+// ======================
+
 const swiper = new Swiper('.mySwiper', {
     slidesPerView: 3,
     spaceBetween: 60,
@@ -117,7 +101,12 @@ const swiper = new Swiper('.mySwiper', {
     },
 });
 
+
+
+// ======================
 // Customer opinions
+// ======================
+
 const swiperOpinions = new Swiper('.mySwiperSli', {
     slidesPerView: 1,
     spaceBetween: 60,
@@ -138,33 +127,37 @@ const swiperOpinions = new Swiper('.mySwiperSli', {
 });
 
 
-// Add card
 
+// ======================
 // show list Card
-let listProdect = document.querySelectorAll(`.listProdect`)
-let listProdects = document.querySelector(`.listProdects`)
-let listCard = document.querySelector(`.listCard`)
-let iconShowNm = document.getElementById(`iconShowNm`);
-let Cancel = document.getElementById(`Cancel`);
-let boxProdect = document.querySelector(`.boxProdect`);
-let itemProdect = document.querySelector('.itemProdect');
-let Available = document.getElementById(`Available`)
+// ======================
 
 iconShowNm.addEventListener(`click`, () => boxProdect.classList.add(`show`));
 Cancel.addEventListener(`click`, () => boxProdect.classList.remove(`show`));
 
 
+// ======================
+// Array Data  
+// ======================
 
+var cards ;
+if (localStorage.getItem('CardItem')) {
+    cards = JSON.parse(localStorage.getItem('CardItem'))
+}else{
+    cards = [];
+}
 var listProdectes = [];
 let searchData = [];
-let cards = [];
 let Details = [];
 let demo;
 let docm;
 
+
+
 // =============================
 // Filter Data And Add Data html
 // =============================
+
 var FilterSelect = 'all';
 let selectFilter = document.getElementById(`selectFilter`)
 let AllProductsCatgory = listProdectes
@@ -219,10 +212,10 @@ function AddDatatoHtml() {
 
             listProdects.appendChild(NewProdect)
             listProdect.innerHTML = NewProdect
-
         })
     }
 }
+
 
 // ========================
 // Show Message Add To Card
@@ -263,21 +256,26 @@ const AddToCard = (id) => {
     AddcardtoMemre()
 };
 
+
+
 // ======================
 // Add product Shop Html 
 // ======================
+
 const minusCard = (id) => {
-    let positionthinprodect = cards.filter((value) => value.id == id);
+    let positionthinprodect = cards.findIndex((value) => value.id == id);
     if (cards.length <= 0) {
-
+        
     } else if (cards[positionthinprodect].quantity === 1) {
-
+        
     } else {
         cards[positionthinprodect].quantity = cards[positionthinprodect].quantity - 1;
     }
     Addcardtohtml()
     AddcardtoMemre()
 };
+
+
 
 // ======================
 // Add Data To Memre
@@ -286,6 +284,7 @@ const minusCard = (id) => {
 const AddcardtoMemre = () => {
     localStorage.setItem(`CardItem`, JSON.stringify(cards))
 }
+
 
 
 // ======================
@@ -345,6 +344,11 @@ const Addcardtohtml = () => {
     AddDatatoHtml()
 }
 
+
+// ======================
+// Delete Priduct 
+// ======================
+
 const dellToCard = (id) => {
     const DellProduct = cards.findIndex((it) => it.id == id)
     console.log(DellProduct);
@@ -354,27 +358,9 @@ const dellToCard = (id) => {
 }
 
 
-const changeQuantity = (prodectIdNum, type) => {
-    let positoniconcard = cards.findIndex((value) => value.prodectId === prodectIdNum)
-    if (positoniconcard >= 0) {
-        switch (type) {
-            case 'plus':
-                cards[positoniconcard].quantity = cards[positoniconcard].quantity + 1;
-                break;
-            default:
-                let valuecheng = cards[positoniconcard].quantity - 1;
-                if (valuecheng > 0) {
-                    cards[positoniconcard].quantity = valuecheng;
-                } else {
-                    cards.splice(positoniconcard, 1)
-                    // localStorage.CardItem.remove()
-                }
-                break;
-        }
-    }
-    AddcardtoMemre()
-    Addcardtohtml()
-}
+// ======================
+// Search Product in Data
+// ======================
 
 function searchDate(value) {
     document.querySelector('.Product').innerHTML = '';
@@ -388,8 +374,12 @@ function searchDate(value) {
     `
         document.querySelector('.Product').innerHTML += NewProdect
     })
-
 }
+
+
+// ======================
+// get Data Api
+// ======================
 
 let initApp = () => {
     fetch('http://localhost:3000/products')
@@ -400,16 +390,20 @@ let initApp = () => {
 
             AddDatatoHtml()
             checkFilterValue()
-            searchDate()
+            // searchDate()
             // 
             if (localStorage.getItem('CardItem')) {
-                cards = JSON.parse(localStorage.getItem('CardItem'))
                 Addcardtohtml()
             }
+            
         })
 }
 initApp()
-// prodect 
+
+
+// ======================
+// return peage 
+// ======================
 
 function ViewProdects() {
     if (demo != 0) {
@@ -421,36 +415,6 @@ function ViewProdects() {
 
     }
 }
-
-// check Detalis
-let DetailsProdect = document.querySelector(`.DetailsProdect`)
-let DetailsBox = document.querySelector('.DetailsBox');
-let iconClose = document.querySelector(`.iconClose`)
-
-
-
-// function checkDetails(id) {
-//     DetailsProdect.style.display = `flex`;
-//     DetailsBox.style.display = `block`;
-//     let DetalisShow = listProdectes.find((prodect) => prodect.id === id);
-
-//     DetailsBox.innerHTML = `
-//             <img src="${DetalisShow.imageUrl}" alt="">
-//             <div class="text">
-//                 <h3>${DetalisShow.title}</h3>
-//             </div>
-//             <div class="numprodc">
-//                 <span>prise : $ ${DetalisShow.price}</span>
-//             </div>
-//             <div class="DetailsDataProdect">
-//                 <p>dolor sit amet consectetur adipisicing elit. Aliquid sequi, consequuntur dolorem amet minima incidunt, deleniti voluptas magnam sunt totam porro veritatis itaque ex delectus. Nihil esse rerum autem molestias.</p>
-//             </div>
-//             <button onclick="checkUserData()" class="addcard" id="btnBrodect">Add brodect</button>
-//     `
-// }
-
-// icon search
-
 
 
 // ======================
